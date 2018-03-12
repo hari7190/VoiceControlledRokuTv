@@ -60,16 +60,16 @@ with sr.Microphone(device_index=device_id, sample_rate=sample_rate,
         print ("you said: " + text)
         if (text.lower().startswith("roku")):
             if (text.lower().endswith("left")):
-                res = requests.post(url + "Left", data=payload, headers=headers)
+                url = url + "Left"
             elif (text.lower().endswith("right")):
-                res = requests.post(url + "Right", data=payload, headers=headers)
+                url = url + "right"
             elif (text.lower().endswith("select")):
-                res = requests.post(url + "Select", data=payload, headers=headers)
+                url = url + "select"
 
+            res = requests.post(url, data=payload, headers=headers)
             print(res)
 
     # error occurs when google could not understand what was said
-
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
 
