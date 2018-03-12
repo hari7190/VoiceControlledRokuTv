@@ -20,7 +20,7 @@ headers = {}
 mic_name = "Built-in Microphone"
 
 # Sample rate is how often values are recorded
-sample_rate = 48000
+sample_rate = 44100 #48000
 
 
 # Chunk is like a buffer. It stores 2048 samples (bytes of data) here.
